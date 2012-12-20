@@ -1,0 +1,63 @@
+use Modern::Perl;
+use utf8::all;
+
+package Person;
+use Moose;
+has 'id' => (is => 'rw');
+has 'name' => (is => 'rw', isa => 'Str');
+has 'gpslogkey' => (is => 'rw', isa => 'Str');
+no Moose;
+__PACKAGE__->meta->make_immutable;
+
+package StatusUpdate;
+use Moose;
+has 'id' => (is => 'rw');
+has 'status' => (is => 'rw', isa => 'Str');
+has 'entered' => (is => 'rw', isa => 'Str');
+has 'locationset' => (is => 'rw');
+has 'latitude' => (is => 'rw', isa => 'Num');
+has 'longitude' => (is => 'rw', isa => 'Num');
+has 'twitter_updated' => (is => 'rw');
+has 'facebook_updated' => (is => 'rw');
+has 'flutterbynetlog_updated' => (is => 'rw');
+has 'posaccuracy' => (is => 'rw');
+has 'twitter_update' => (is => 'rw');
+has 'facebook_update' => (is => 'rw');
+has 'person_id' => (is => 'rw', isa => 'Int');
+has 'flutterby_update' => (is => 'rw');
+has 'flutterby_updated' => (is => 'rw');
+no Moose;
+__PACKAGE__->meta->make_immutable;
+
+package GPSLogEntry;
+use Moose;
+has 'id' => (is => 'rw');
+has 'person_id' => (is => 'rw', isa => 'Int');
+has 'EntryId' => (is => 'rw');
+has 'Date' => (is => 'rw');
+has 'VerticalAccuracy' => (is => 'rw');
+has 'Note' => (is => 'rw');
+has 'SMSUrl' => (is => 'rw');
+has 'VisitPK' => (is => 'rw');
+has 'FullTitle' => (is => 'rw');
+has 'EntryLastModifiedDate' => (is => 'rw');
+has 'ImageExportFilename' => (is => 'rw');
+has 'VisitCreationDate' => (is => 'rw');
+has 'VisitNum' => (is => 'rw');
+has 'AllTags' => (is => 'rw');
+has 'LocTags' => (is => 'rw');
+has 'ThumbnailIndex' => (is => 'rw');
+has 'EntryCreationDate' => (is => 'rw');
+has 'Altitude' => (is => 'rw');
+has 'Timezone' => (is => 'rw');
+has 'Subtitle' => (is => 'rw');
+has 'Longitude' => (is => 'rw');
+has 'Latitude' => (is => 'rw');
+has 'HorizontalAccuracy' => (is => 'rw');
+has 'Tags' => (is => 'rw');
+has 'Title' => (is => 'rw');
+
+no Moose;
+__PACKAGE__->meta->make_immutable;
+
+1;
